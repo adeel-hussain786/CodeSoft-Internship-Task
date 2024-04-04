@@ -1,0 +1,47 @@
+
+import java.util.Scanner;
+
+public class Student {
+    public static void main (String args[]){
+        System.out.println("\n\t\t\t>>>>>>>>>>>>>>>>>STUDENT GRADE CALCULATOR>>>>>>>>>>>>>>>>>>>>>>");
+        Scanner adeel=new Scanner(System.in);
+        System.out.print("Enter Name of Student:");
+        String studentName=adeel.nextLine();
+        System.out.print("Enter Number of Subject:");
+        int numSubject=adeel.nextInt();
+        int totalMarks=0;
+        System.out.println();
+        for (int i = 1; i <= numSubject; i++) {
+        int marks;
+        do {
+            System.out.print("Enter marks obtained in subject " + i + " (less than 100): ");
+            marks = adeel.nextInt();
+            if (marks > 100) {
+                System.out.println("Marks cannot exceed 100. Please Re-Enter.");}}
+        while (marks > 100);
+        totalMarks += marks;}
+
+        System.out.println();
+        System.out.println(" Total Marks: "+ totalMarks );
+        double average =(double) totalMarks/numSubject;
+        System.out.println(" Average Percentage: "+ average + "%");
+        
+        String grade;
+        if(average>=90 && average<=100){
+            grade="A";}
+        else if(average>=70 && average<90){
+            grade="C";}
+        else if(average>=60 && average<70){
+            grade="D";}
+        else{
+            grade="F";}
+        
+        System.out.println(" Grade: "+ grade );
+        System.out.println("\n\t\t\t\t>>>>>>>>>>>>>>>>DISPLAY RESULT>>>>>>>>>>>>>>>>>>");
+        System.out.println(" Student Name \t\t:"+ studentName );
+        System.out.println(" Total Marks  \t\t:"+ totalMarks);
+        System.out.println(" Average Percentage :" + average);
+        System.out.println(" Grade \t\t\t\t:"+ grade);
+
+    }
+}
